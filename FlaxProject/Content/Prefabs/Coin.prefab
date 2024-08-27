@@ -13,8 +13,8 @@
 		"TypeName": "Game.Coin",
 		"ParentID": "460aecc141b86c238c56d3b6a5b9865c",
 		"V": {
-	"player": "8fcd355847346e74386b648845c076e8",
-	"collectCoinSFX": "344b19934e46e5958efb25a671942378"
+	"collectCoinSFX": "344b19934e46e5958efb25a671942378",
+	"turnSpeed": 50.0
 }
 	},
 	{

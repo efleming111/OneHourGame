@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FlaxEngine;
 using FlaxEngine.GUI;
 
@@ -7,6 +8,12 @@ namespace Game;
 
 public class Player : Script
 {
+    [ShowInEditor, Serialize]
+    private Scene nextLevel;
+
+    [ShowInEditor, Serialize]
+    private CoinManager coinManager;
+
     [ShowInEditor, Serialize]
     private UICanvas playerHUD;
 
@@ -46,14 +53,27 @@ public class Player : Script
             * moveForce
             * cameraController.Transform.Forward
             * Input.GetAxis("Vertical")
-            , ForceMode.Acceleration);
+            , ForceMode.Impulse);
         rigidBody.AddForce(Time.DeltaTime
             * moveForce
             * cameraController.Transform.Right
             * Input.GetAxis("Horizontal")
-            , ForceMode.Acceleration);
+            , ForceMode.Impulse);
     }
 
+    private async Task<bool> LoadNextLevel(int millisecond)
+    {
+        bool result = await Task.Run(() =>
+        {
+            Task.Delay(millisecond).Wait();
+            return true;
+        });
+
+        //Level.LoadScene(nextLevel);
+        Debug.Log("Load Next Level");
+
+        return result;
+    }
     public void CollectCoins(int amount)
     {
         if (amount < 0)
@@ -62,6 +82,10 @@ public class Player : Script
         }
         coins += amount;
         playerHUD.GetScript<PlayerHUD>().UpdateScore(coins);
+        if (coinManager.CollectedAllCoins(1))
+        {
+            LoadNextLevel(3000);
+        }
     }
 
     public void SpendCoins(int amount)

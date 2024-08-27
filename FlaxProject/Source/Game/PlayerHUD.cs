@@ -10,9 +10,16 @@ public class PlayerHUD : Script
     [ShowInEditor, Serialize]
     private UIControl coins;
 
+    [ShowInEditor, Serialize]
+    private UIControl winMessage;
+
     public void UpdateScore(int value)
     {
-        Debug.Log("Update Coins");
         coins.Get<Label>().Text = "Coins: " + value;
+    }
+
+    public void UpdateWinMessage()
+    {
+        winMessage.IsActive = true;
     }
 }

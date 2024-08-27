@@ -32,7 +32,7 @@ public class Coin : Script
         base.OnUpdate();
 
         coinRotation.Y += Time.DeltaTime * -turnSpeed;
-        Actor.LocalEulerAngles += coinRotation;
+        Actor.LocalEulerAngles = coinRotation;
     }
 
     public void OnTriggerEnter(PhysicsColliderActor collider)

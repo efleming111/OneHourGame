@@ -1,10 +1,10 @@
 {
-	"ID": "19aba839473431bf03cd1a9291034d0b",
+	"ID": "4d023ee44580020f0fc58bbb8ebceb08",
 	"TypeName": "FlaxEngine.SceneAsset",
 	"EngineBuild": 6512,
 	"Data": [
 		{
-			"ID": "19aba839473431bf03cd1a9291034d0b",
+			"ID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"TypeName": "FlaxEngine.Scene",
 			"LightmapSettings": {
 				"IndirectLightingIntensity": 1.0,
@@ -20,7 +20,7 @@
 		{
 			"ID": "9845db3d4ce6966e21586f9143d0d15a",
 			"TypeName": "FlaxEngine.DirectionalLight",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "Sun",
 			"Transform": {
 				"Translation": {
@@ -34,13 +34,12 @@
 					"Z": 0.0,
 					"W": 0.9238795042037964
 				}
-			},
-			"Brightness": 2.0
+			}
 		},
 		{
 			"ID": "20f96ca945f118aeef2845b03800b48b",
 			"TypeName": "FlaxEngine.Sky",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "Sky",
 			"Transform": {
 				"Translation": {
@@ -49,27 +48,20 @@
 					"Z": 0.0
 				}
 			},
-			"Sun": "9845db3d4ce6966e21586f9143d0d15a",
-			"SunPower": 3.0
+			"Sun": "9845db3d4ce6966e21586f9143d0d15a"
 		},
 		{
 			"ID": "3c578aa44ef5ee13ce83e6aaba618627",
 			"TypeName": "FlaxEngine.SkyLight",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "SkyLight",
-			"Color": {
-				"R": 0.22819757461547852,
-				"G": 0.6107997894287109,
-				"B": 1.0,
-				"A": 1.0
-			},
 			"Brightness": 2.5,
 			"CustomTexture": "c54410104ff39427bc11e5bc761d66b0"
 		},
 		{
 			"ID": "1fa4d51642fe42073e25cdbea679ecd8",
 			"TypeName": "FlaxEngine.PostFxVolume",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "PostFxVolume",
 			"IsBounded": false,
 			"Settings": {
@@ -97,7 +89,7 @@
 		{
 			"ID": "a85801ef41745eea67a0828060e2f394",
 			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "Floor",
 			"Transform": {
 				"Orientation": {
@@ -129,7 +121,7 @@
 		{
 			"ID": "8fcd355847346e74386b648845c076e8",
 			"TypeName": "FlaxEngine.RigidBody",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "Player",
 			"Transform": {
 				"Translation": {
@@ -138,21 +130,19 @@
 					"Z": 0.0
 				}
 			},
-			"OverrideMass": true,
-			"Mass": 50.0
+			"Mass": 523.5988159179688
 		},
 		{
 			"ID": "10adc57d4c7e4ec1d0b113a21a579cbd",
 			"TypeName": "Game.Player",
 			"ParentID": "8fcd355847346e74386b648845c076e8",
 			"V": {
-	"coinManager": "2c5689954469dd2d0f468aa24adbca2a",
-	"playerHUD": "acf2e9234a6de706df43f1865401c392",
-	"rigidBody": "8fcd355847346e74386b648845c076e8",
-	"cameraController": "addee8944bcfd7dbefdf88be7f9c39cb",
-	"jumpForce": 800.0,
-	"moveForce": 30000.0
-}
+				"playerHUD": "acf2e9234a6de706df43f1865401c392",
+				"rigidBody": "8fcd355847346e74386b648845c076e8",
+				"cameraController": "addee8944bcfd7dbefdf88be7f9c39cb",
+				"jumpForce": 1000.0,
+				"moveForce": 10000.0
+			}
 		},
 		{
 			"ID": "2e7cf5ec406dd2d1c6ab7f9a6e021b68",
@@ -181,19 +171,13 @@
 		{
 			"ID": "addee8944bcfd7dbefdf88be7f9c39cb",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "CameraController",
 			"Transform": {
 				"Translation": {
 					"X": 0.0,
 					"Y": 200.0,
 					"Z": 0.0
-				},
-				"Orientation": {
-					"X": -2.5414388815647727e-8,
-					"Y": -0.9914448857307434,
-					"Z": -0.13052619993686677,
-					"W": 1.930414441631001e-7
 				}
 			}
 		},
@@ -202,8 +186,8 @@
 			"TypeName": "Game.CameraController",
 			"ParentID": "addee8944bcfd7dbefdf88be7f9c39cb",
 			"V": {
-	"player": "8fcd355847346e74386b648845c076e8"
-}
+				"player": "8fcd355847346e74386b648845c076e8"
+			}
 		},
 		{
 			"ID": "479e904547cf1f3317fa2a8ee0058cd1",
@@ -217,23 +201,23 @@
 					"Z": -388.8392333984375
 				},
 				"Orientation": {
-					"X": 0.24740006029605866,
+					"X": 0.24740006029605864,
 					"Y": 0.0,
 					"Z": 0.0,
-					"W": 0.9689134955406189
+					"W": 0.9689134955406188
 				}
 			}
 		},
 		{
 			"ID": "acf2e9234a6de706df43f1865401c392",
 			"TypeName": "FlaxEngine.UICanvas",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "PlayerHUD",
 			"Transform": {
 				"Orientation": {
 					"X": 1.0,
-					"Y": 4.371138828673793e-8,
-					"Z": 4.371138828673793e-8,
+					"Y": 4.3711388286737938e-8,
+					"Z": 4.3711388286737938e-8,
 					"W": 1.910685465164705e-15
 				}
 			},
@@ -244,9 +228,8 @@
 			"TypeName": "Game.PlayerHUD",
 			"ParentID": "acf2e9234a6de706df43f1865401c392",
 			"V": {
-	"coins": "fba314da430784ff79382bab5c1ecbd7",
-	"winMessage": "3291759f4cdd23853095e285477b1734"
-}
+				"coins": "fba314da430784ff79382bab5c1ecbd7"
+			}
 		},
 		{
 			"ID": "ce2bf3974d43ae54588fc791a74a0ae8",
@@ -255,98 +238,98 @@
 			"Name": "Canvas Scalar",
 			"Control": "FlaxEngine.GUI.CanvasScaler",
 			"Data": {
-	"ResolutionCurve": {
-		"Keyframes": [
-			{
-				"Time": 480.0,
-				"Value": 0.444
-			},
-			{
-				"Time": 720.0,
-				"Value": 0.666
-			},
-			{
-				"Time": 1080.0,
-				"Value": 1.0
-			},
-			{
-				"Time": 8640.0,
-				"Value": 8.0
+				"ResolutionCurve": {
+					"Keyframes": [
+						{
+							"Time": 480.0,
+							"Value": 0.444
+						},
+						{
+							"Time": 720.0,
+							"Value": 0.666
+						},
+						{
+							"Time": 1080.0,
+							"Value": 1.0
+						},
+						{
+							"Time": 8640.0,
+							"Value": 8.0
+						}
+					]
+				},
+				"DpiCurve": {
+					"Keyframes": [
+						{
+							"Time": 1.0,
+							"Value": 1.0
+						},
+						{
+							"Time": 96.0,
+							"Value": 1.0
+						},
+						{
+							"Time": 200.0,
+							"Value": 2.0
+						},
+						{
+							"Time": 400.0,
+							"Value": 4.0
+						}
+					]
+				},
+				"Scaling": 0,
+				"ScaleFactor": 1.0,
+				"PhysicalUnit": 3,
+				"PhysicalUnitSize": 1.0,
+				"ResolutionMode": 0,
+				"ResolutionMin": {
+					"X": 640.0,
+					"Y": 480.0
+				},
+				"ResolutionMax": {
+					"X": 7680.0,
+					"Y": 4320.0
+				},
+				"ClipChildren": true,
+				"CullChildren": true,
+				"AnchorMin": {
+					"X": 0.0,
+					"Y": 0.0
+				},
+				"AnchorMax": {
+					"X": 1.0,
+					"Y": 1.0
+				},
+				"Offsets": {
+					"Left": 0.0,
+					"Right": 0.0,
+					"Top": 0.0,
+					"Bottom": 0.0
+				},
+				"Scale": {
+					"X": 1.0,
+					"Y": 1.0
+				},
+				"Pivot": {
+					"X": 0.5,
+					"Y": 0.5
+				},
+				"Shear": {
+					"X": 0.0,
+					"Y": 0.0
+				},
+				"Rotation": 0.0,
+				"BackgroundColor": {
+					"R": 0.0,
+					"G": 0.0,
+					"B": 0.0,
+					"A": 0.0
+				},
+				"Enabled": true,
+				"Visible": true,
+				"AutoFocus": false
 			}
-		]
-	},
-	"DpiCurve": {
-		"Keyframes": [
-			{
-				"Time": 1.0,
-				"Value": 1.0
-			},
-			{
-				"Time": 96.0,
-				"Value": 1.0
-			},
-			{
-				"Time": 200.0,
-				"Value": 2.0
-			},
-			{
-				"Time": 400.0,
-				"Value": 4.0
-			}
-		]
-	},
-	"Scaling": 0,
-	"ScaleFactor": 1.0,
-	"PhysicalUnit": 3,
-	"PhysicalUnitSize": 1.0,
-	"ResolutionMode": 0,
-	"ResolutionMin": {
-		"X": 640.0,
-		"Y": 480.0
-	},
-	"ResolutionMax": {
-		"X": 7680.0,
-		"Y": 4320.0
-	},
-	"ClipChildren": true,
-	"CullChildren": true,
-	"AnchorMin": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"AnchorMax": {
-		"X": 1.0,
-		"Y": 1.0
-	},
-	"Offsets": {
-		"Left": 0.0,
-		"Right": 0.0,
-		"Top": 0.0,
-		"Bottom": 0.0
-	},
-	"Scale": {
-		"X": 1.0,
-		"Y": 1.0
-	},
-	"Pivot": {
-		"X": 0.5,
-		"Y": 0.5
-	},
-	"Shear": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"Rotation": 0.0,
-	"BackgroundColor": {
-		"R": 0.0,
-		"G": 0.0,
-		"B": 0.0,
-		"A": 0.0
-	},
-	"Enabled": true,
-	"Visible": true,
-	"AutoFocus": false
-}
 		},
 		{
 			"ID": "fba314da430784ff79382bab5c1ecbd7",
@@ -362,183 +345,89 @@
 			},
 			"Control": "FlaxEngine.GUI.Label",
 			"Data": {
-	"Text": "Coins: 0",
-	"CaseOption": 0,
-	"Bold": false,
-	"Italic": false,
-	"TextColor": {
-		"R": 0.8533201,
-		"G": 1.0,
-		"B": 0.6428854,
-		"A": 1.0
-	},
-	"TextColorHighlighted": {
-		"R": 1.0,
-		"G": 1.0,
-		"B": 1.0,
-		"A": 1.0
-	},
-	"HorizontalAlignment": 0,
-	"VerticalAlignment": 0,
-	"Wrapping": 0,
-	"BaseLinesGapScale": 1.0,
-	"Font": {
-		"Font": "1b8145504289d9aec22a769a796ceddc",
-		"Size": 50.0
-	},
-	"Material": null,
-	"Margin": {
-		"Left": 0.0,
-		"Right": 0.0,
-		"Top": 0.0,
-		"Bottom": 0.0
-	},
-	"ClipText": false,
-	"AutoWidth": false,
-	"AutoHeight": false,
-	"AutoFitText": false,
-	"AutoFitTextRange": {
-		"X": 0.1,
-		"Y": 100.0
-	},
-	"ClipChildren": true,
-	"CullChildren": true,
-	"AnchorMin": {
-		"X": 1.0,
-		"Y": 0.0
-	},
-	"AnchorMax": {
-		"X": 1.0,
-		"Y": 0.0
-	},
-	"Offsets": {
-		"Left": -257.0,
-		"Right": 243.0,
-		"Top": 12.0,
-		"Bottom": 99.0
-	},
-	"Scale": {
-		"X": 1.0,
-		"Y": 1.0
-	},
-	"Pivot": {
-		"X": 0.5,
-		"Y": 0.5
-	},
-	"Shear": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"Rotation": 0.0,
-	"BackgroundColor": {
-		"R": 0.0,
-		"G": 0.0,
-		"B": 0.0,
-		"A": 0.0
-	},
-	"Enabled": true,
-	"Visible": true,
-	"AutoFocus": false
-}
-		},
-		{
-			"ID": "3291759f4cdd23853095e285477b1734",
-			"TypeName": "FlaxEngine.UIControl",
-			"ParentID": "acf2e9234a6de706df43f1865401c392",
-			"IsActive": false,
-			"Name": "WinMessage",
-			"Transform": {
-				"Translation": {
-					"X": 692.5,
-					"Y": 435.0,
-					"Z": 0.0
-				}
-			},
-			"Control": "FlaxEngine.GUI.Label",
-			"Data": {
-	"Text": "You Win",
-	"CaseOption": 0,
-	"Bold": false,
-	"Italic": false,
-	"TextColor": {
-		"R": 1.0,
-		"G": 1.0,
-		"B": 1.0,
-		"A": 1.0
-	},
-	"TextColorHighlighted": {
-		"R": 1.0,
-		"G": 1.0,
-		"B": 1.0,
-		"A": 1.0
-	},
-	"HorizontalAlignment": 1,
-	"VerticalAlignment": 1,
-	"Wrapping": 0,
-	"BaseLinesGapScale": 1.0,
-	"Font": {
-		"Font": "1b8145504289d9aec22a769a796ceddc",
-		"Size": 100.0
-	},
-	"Material": null,
-	"Margin": {
-		"Left": 0.0,
-		"Right": 0.0,
-		"Top": 0.0,
-		"Bottom": 0.0
-	},
-	"ClipText": false,
-	"AutoWidth": false,
-	"AutoHeight": false,
-	"AutoFitText": false,
-	"AutoFitTextRange": {
-		"X": 0.1,
-		"Y": 100.0
-	},
-	"ClipChildren": true,
-	"CullChildren": true,
-	"AnchorMin": {
-		"X": 0.5,
-		"Y": 0.5
-	},
-	"AnchorMax": {
-		"X": 0.5,
-		"Y": 0.5
-	},
-	"Offsets": {
-		"Left": -267.5,
-		"Right": 535.0,
-		"Top": -105.0,
-		"Bottom": 210.0
-	},
-	"Scale": {
-		"X": 1.0,
-		"Y": 1.0
-	},
-	"Pivot": {
-		"X": 0.5,
-		"Y": 0.5
-	},
-	"Shear": {
-		"X": 0.0,
-		"Y": 0.0
-	},
-	"Rotation": 0.0,
-	"BackgroundColor": {
-		"R": 0.0,
-		"G": 0.0,
-		"B": 0.0,
-		"A": 0.0
-	},
-	"Enabled": true,
-	"Visible": false,
-	"AutoFocus": false
-}
+				"Text": "Coins: 0",
+				"CaseOption": 0,
+				"Bold": false,
+				"Italic": false,
+				"TextColor": {
+					"R": 0.0,
+					"G": 0.0,
+					"B": 0.0,
+					"A": 1.0
+				},
+				"TextColorHighlighted": {
+					"R": 1.0,
+					"G": 1.0,
+					"B": 1.0,
+					"A": 1.0
+				},
+				"HorizontalAlignment": 0,
+				"VerticalAlignment": 0,
+				"Wrapping": 0,
+				"BaseLinesGapScale": 1.0,
+				"Font": {
+					"Font": "1b8145504289d9aec22a769a796ceddc",
+					"Size": 50.0
+				},
+				"Material": null,
+				"Margin": {
+					"Left": 0.0,
+					"Right": 0.0,
+					"Top": 0.0,
+					"Bottom": 0.0
+				},
+				"ClipText": false,
+				"AutoWidth": false,
+				"AutoHeight": false,
+				"AutoFitText": false,
+				"AutoFitTextRange": {
+					"X": 0.1,
+					"Y": 100.0
+				},
+				"ClipChildren": true,
+				"CullChildren": true,
+				"AnchorMin": {
+					"X": 1.0,
+					"Y": 0.0
+				},
+				"AnchorMax": {
+					"X": 1.0,
+					"Y": 0.0
+				},
+				"Offsets": {
+					"Left": -257.0,
+					"Right": 243.0,
+					"Top": 12.0,
+					"Bottom": 99.0
+				},
+				"Scale": {
+					"X": 1.0,
+					"Y": 1.0
+				},
+				"Pivot": {
+					"X": 0.5,
+					"Y": 0.5
+				},
+				"Shear": {
+					"X": 0.0,
+					"Y": 0.0
+				},
+				"Rotation": 0.0,
+				"BackgroundColor": {
+					"R": 0.0,
+					"G": 0.0,
+					"B": 0.0,
+					"A": 0.0
+				},
+				"Enabled": true,
+				"Visible": true,
+				"AutoFocus": false
+			}
 		},
 		{
 			"ID": "6e3174204a05433018361d8ab2db054f",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
 			"Name": "Platforms"
 		},
 		{
@@ -573,9 +462,9 @@
 			"Name": "Platform 0",
 			"Transform": {
 				"Translation": {
-					"X": 207.685791015625,
+					"X": 263.107666015625,
 					"Y": 168.50631713867188,
-					"Z": -764.9181518554688
+					"Z": -816.90869140625
 				}
 			},
 			"Buffer": {
@@ -599,7 +488,7 @@
 			"Transform": {
 				"Translation": {
 					"X": -848.6356811523438,
-					"Y": 443.21856689453127,
+					"Y": 443.2185668945313,
 					"Z": -1361.3651123046876
 				}
 			},
@@ -670,13 +559,6 @@
 			"PrefabID": "b963c00e48db86870f3202980ddaa997",
 			"PrefabObjectID": "97ebcfb7414eff075a90888662d67714",
 			"ParentID": "6e3174204a05433018361d8ab2db054f",
-			"Transform": {
-				"Translation": {
-					"X": 284.1551513671875,
-					"Y": 527.97900390625,
-					"Z": -1766.8035888671876
-				}
-			},
 			"Buffer": {
 				"Entries": [
 					{}
@@ -692,17 +574,8 @@
 		{
 			"ID": "356f2daf49238d1f21a55f853785d409",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "19aba839473431bf03cd1a9291034d0b",
-			"Name": "CoinManager"
-		},
-		{
-			"ID": "2c5689954469dd2d0f468aa24adbca2a",
-			"TypeName": "Game.CoinManager",
-			"ParentID": "356f2daf49238d1f21a55f853785d409",
-			"V": {
-	"hud": "9db11cd54472956c6f748e9e4f4b9ef3",
-	"coinsNeeded": 2
-}
+			"ParentID": "4d023ee44580020f0fc58bbb8ebceb08",
+			"Name": "Coins"
 		},
 		{
 			"ID": "c01ab69e4addc9ff39ab3dabd9f18799",
@@ -723,8 +596,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "c01ab69e4addc9ff39ab3dabd9f18799",
 			"V": {
-	"collectCoinSFX": "d6fcd3d44942b17351b71c839a2a3cba"
-}
+				"collectCoinSFX": "d6fcd3d44942b17351b71c839a2a3cba"
+			}
 		},
 		{
 			"ID": "f67153ef427e5e589278aba9ad7ded84",
@@ -757,7 +630,7 @@
 			"Name": "Coin 0",
 			"Transform": {
 				"Translation": {
-					"X": -230.65463256835938,
+					"X": -230.65463256835936,
 					"Y": 686.9136962890625,
 					"Z": -1726.2352294921876
 				}
@@ -769,8 +642,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "a87915e64f181253a5c509bbbd9c1dee",
 			"V": {
-	"collectCoinSFX": "9cb324db4aad54934b61949c83c63635"
-}
+				"collectCoinSFX": "9cb324db4aad54934b61949c83c63635"
+			}
 		},
 		{
 			"ID": "89ea0f8c442f87fd8cfffdbfa8aae0f1",
@@ -815,8 +688,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "e82cf8184b1d8bc2b853eb8e3f1f4525",
 			"V": {
-	"collectCoinSFX": "2d9b0e2d4cd848b1df4a61b05d952cb3"
-}
+				"collectCoinSFX": "2d9b0e2d4cd848b1df4a61b05d952cb3"
+			}
 		},
 		{
 			"ID": "2c4fc67e4978eb989d50fcb4c95079c8",
@@ -861,8 +734,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "895efcce4177bbe7b5bfffa54a9f14cd",
 			"V": {
-	"collectCoinSFX": "cea9b969490cadb80a9f78be14876fec"
-}
+				"collectCoinSFX": "cea9b969490cadb80a9f78be14876fec"
+			}
 		},
 		{
 			"ID": "30a7d3684a805b385f01db8edda4a011",
@@ -895,9 +768,9 @@
 			"Name": "Coin 3",
 			"Transform": {
 				"Translation": {
-					"X": -394.46240234375,
+					"X": 249.96031188964845,
 					"Y": 120.0,
-					"Z": -724.7327880859375
+					"Z": -796.025146484375
 				}
 			}
 		},
@@ -907,8 +780,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "f882577c4300db94b2148d9e697e1495",
 			"V": {
-	"collectCoinSFX": "bad7cbcb4f807485b64992aa0545341a"
-}
+				"collectCoinSFX": "bad7cbcb4f807485b64992aa0545341a"
+			}
 		},
 		{
 			"ID": "d212e9134d5bcb8313e49ab3627ef632",
@@ -953,8 +826,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "0b57b7494f0cc747e7a3028125ab3f20",
 			"V": {
-	"collectCoinSFX": "248433094eeb3e611fb48fa82c8b384c"
-}
+				"collectCoinSFX": "248433094eeb3e611fb48fa82c8b384c"
+			}
 		},
 		{
 			"ID": "f04d9cde4edcbd013ad8f586afb596ac",
@@ -987,8 +860,8 @@
 			"Name": "Coin 5",
 			"Transform": {
 				"Translation": {
-					"X": 155.02505493164063,
-					"Y": 90.88711547851563,
+					"X": 155.02505493164066,
+					"Y": 90.88711547851564,
 					"Z": -1414.123291015625
 				}
 			}
@@ -999,8 +872,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "923ede0a40ab8873e9ccf99f27879248",
 			"V": {
-	"collectCoinSFX": "6610bdef456e62fceef41aa13825dc83"
-}
+				"collectCoinSFX": "6610bdef456e62fceef41aa13825dc83"
+			}
 		},
 		{
 			"ID": "b57f1bf944e2266bc20c3582ebca64c5",
@@ -1045,8 +918,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "20666e1a4c47e9cbcb1331b0fe85069c",
 			"V": {
-	"collectCoinSFX": "befb6d494a3cb0073eff24a33772e937"
-}
+				"collectCoinSFX": "befb6d494a3cb0073eff24a33772e937"
+			}
 		},
 		{
 			"ID": "3956e7c3405202dedc5bd18c69f31c65",
@@ -1091,8 +964,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "7d7342924515f2964070629d5b455a4d",
 			"V": {
-	"collectCoinSFX": "997bc3b042af49b5d8903eb366e4a577"
-}
+				"collectCoinSFX": "997bc3b042af49b5d8903eb366e4a577"
+			}
 		},
 		{
 			"ID": "6dcfd0fe452508a235444898d764a4cf",
@@ -1143,8 +1016,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "0a80aa7b4d887d2a17ccfa8df0680ca6",
 			"V": {
-	"collectCoinSFX": "b5b5ae784fadf8e92d92c5bfd8e111d8"
-}
+				"collectCoinSFX": "b5b5ae784fadf8e92d92c5bfd8e111d8"
+			}
 		},
 		{
 			"ID": "e923fd8d43bb437522f6b48a05344a45",
@@ -1189,8 +1062,8 @@
 			"PrefabObjectID": "3279702648df06a41b91b594d95bcee7",
 			"ParentID": "01b1a9d040289039bf74308c28f81077",
 			"V": {
-	"collectCoinSFX": "f5ea8d984db4af225040fdab498018c0"
-}
+				"collectCoinSFX": "f5ea8d984db4af225040fdab498018c0"
+			}
 		},
 		{
 			"ID": "3b7444b14eb4523c4f18e89b57a21887",

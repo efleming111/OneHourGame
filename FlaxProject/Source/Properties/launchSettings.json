@@ -1,0 +1,11 @@
+﻿{
+  "profiles": {
+    "Game": {
+      "commandName": "Executable",
+      "workingDirectory": "C:/Es/GD/OneHourGame/FlaxProject",
+      "executablePath": "C:/Program Files (x86)/Flax/Flax_1.8/Binaries/Editor/Win64/Development/FlaxEditor.exe",
+      "commandLineArgs": "-project \"C:/Es/GD/OneHourGame/FlaxProject\"",
+      "nativeDebugging": false
+    }
+  }
+}

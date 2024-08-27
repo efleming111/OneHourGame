@@ -1,0 +1,57 @@
+{
+	"ID": "ec2c14c84b531de662888386ad2431f7",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6512,
+	"Data": [
+	{
+		"ID": "460aecc141b86c238c56d3b6a5b9865c",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"Name": "Coin"
+	},
+	{
+		"ID": "3279702648df06a41b91b594d95bcee7",
+		"TypeName": "Game.Coin",
+		"ParentID": "460aecc141b86c238c56d3b6a5b9865c",
+		"V": {
+	"player": "8fcd355847346e74386b648845c076e8",
+	"collectCoinSFX": "344b19934e46e5958efb25a671942378"
+}
+	},
+	{
+		"ID": "a39b5bee46345e387d8651a23052da9e",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "460aecc141b86c238c56d3b6a5b9865c",
+		"Name": "CoinMesh",
+		"Model": "f2bca03b409eed6df3b31fab6ce55c7d",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "0b8ffceb417fca1a79d85ca718dc715c",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "ce0f67b14c3e0c637a84ea90d30e5196",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "460aecc141b86c238c56d3b6a5b9865c",
+		"Name": "Trigger",
+		"IsTrigger": true,
+		"Size": {
+			"X": 71.33589935302735,
+			"Y": 71.33590698242188,
+			"Z": 10.8739013671875
+		}
+	},
+	{
+		"ID": "344b19934e46e5958efb25a671942378",
+		"TypeName": "FlaxEngine.AudioSource",
+		"ParentID": "460aecc141b86c238c56d3b6a5b9865c",
+		"Name": "AudioSource",
+		"Clip": "47e8bc894c2ec505f163bfb36cde726d"
+	}
+]
+}

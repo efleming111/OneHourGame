@@ -1,0 +1,17 @@
+Flax Project: 		40m 
+Godot Project:		start    
+Unreal Engine Project:	start
+
+
+C# delay example
+public async Task<bool> DestroyActorInSeconds(int milliseconds)
+{
+    bool result = await Task.Run(() =>
+    {
+        Task.Delay(milliseconds).Wait();
+        return true;
+    });
+    DestroyActor();
+
+    return result;
+}

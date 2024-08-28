@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 public partial class Player : RigidBody3D
 {
     [Export]
-    private Node3D cameraController = null;
+    private Node3D camera = null;
 
     [Export]
     private float moveForce = 100.0f;
@@ -14,10 +14,12 @@ public partial class Player : RigidBody3D
     [Export]
     private float jumpForce = 10.0f;
 
-    private Vector3 movement = Vector3.Zero;
+    private Vector3 forwardVector = Vector3.Zero;
+    private Vector3 rightVector = Vector3.Zero;
 
     public override void _Ready()
 	{
+
 	}
 
 	public override void _Process(double delta)
@@ -33,20 +35,13 @@ public partial class Player : RigidBody3D
             ApplyImpulse(Vector3.Up * jumpForce);
         }
 
-        // TODO move based on camera angle
-        GD.Print(cameraController.Rotation * 57.2958f);
+        forwardVector = Input.GetAxis("MoveForward", "MoveBackward") * (camera.GlobalPosition - GlobalPosition);
+        rightVector = Input.GetAxis("MoveLeft", "MoveRight") * Vector3.Up.Cross((camera.GlobalPosition - GlobalPosition));
+        forwardVector.Y = 0;
+        rightVector.Y = 0;
 
-        movement.X = Input.GetAxis("MoveForward", "MoveBackward");
-        movement.Z = Input.GetAxis("MoveRight", "MoveLeft");
-
-        movement = movement.Normalized();
-
-
-
-
-        ApplyTorque((float)delta * moveForce * movement);
-
-
+        ApplyForce((float)delta * moveForce * forwardVector.Normalized());
+        ApplyForce((float)delta * moveForce * rightVector.Normalized());
     }
 }
 

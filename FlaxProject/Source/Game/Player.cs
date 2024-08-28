@@ -29,10 +29,17 @@ public class Player : Script
     [ShowInEditor, Serialize]
     private float moveForce = 10.0f;
 
+    private bool isJumping = false;
+
     private int coins;
     public int Coins
     {
         get { return coins; }
+    }
+
+    public override void OnStart()
+    {
+        rigidBody.CollisionEnter += OnCollisionEnter;
     }
 
     public override void OnUpdate()
@@ -44,9 +51,10 @@ public class Player : Script
             Engine.RequestExit();
         }
 
-        if (Input.GetKeyDown(KeyboardKeys.Spacebar))
+        if (Input.GetKeyDown(KeyboardKeys.Spacebar) && !isJumping)
         {
             rigidBody.AddForce(Vector3.Up * jumpForce, ForceMode.VelocityChange);
+            isJumping = true;
         }
 
         rigidBody.AddForce(Time.DeltaTime
@@ -106,5 +114,10 @@ public class Player : Script
             return false;
         }
         return true;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        isJumping = false;
     }
 }

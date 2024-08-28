@@ -3,8 +3,8 @@
 	"TypeName": "FlaxEditor.Content.Settings.GameSettings",
 	"EngineBuild": 6512,
 	"Data": {
-	"ProductName": "My Game",
-	"CompanyName": "My Company",
+	"ProductName": "Ball vs Coins",
+	"CompanyName": "Eric Fleming Games",
 	"CopyrightNotice": null,
 	"Icon": null,
 	"FirstScene": "4d023ee44580020f0fc58bbb8ebceb08",

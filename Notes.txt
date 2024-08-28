@@ -1,7 +1,22 @@
-Flax Project: 		40m  Working on main menu
+Engine Tests
+Create "One Hour Game" in 3 engines
+
+Flax Project: 		Done
 Godot Project:		start    
 Unreal Engine Project:	start
 
+TODO:
+Flax Project
+ Update player movement
+
+Godot Project
+ Godot Progress 18m
+
+Unreal Engine Project
+
+
+Godot - Blender Export
+Transform->Apply Scalings	= FBX Units Scale
 
 C# delay example
 public async Task<bool> DestroyActorInSeconds(int milliseconds)

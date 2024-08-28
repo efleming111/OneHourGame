@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://cgls8nlyc0c3t"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_62msl"]
+[ext_resource type="ArrayMesh" uid="uid://daibqjiriisah" path="res://Meshes/Floor.res" id="1_t1bw8"]
+[ext_resource type="Script" path="res://Scripts/CameraController.cs" id="1_xmrl8"]
+[ext_resource type="Material" uid="uid://dlke13ym280yd" path="res://Materials/M_Floor.tres" id="2_vcrrr"]
+[ext_resource type="ArrayMesh" uid="uid://bciinu55ij3ne" path="res://Meshes/Ball.res" id="3_ci4s5"]
+[ext_resource type="Material" uid="uid://msenp524jr68" path="res://Materials/M_Ball.tres" id="4_youys"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_obp71"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_e7m3t"]
+sky_material = SubResource("ProceduralSkyMaterial_obp71")
+
+[sub_resource type="Environment" id="Environment_58hmr"]
+background_mode = 2
+sky = SubResource("Sky_e7m3t")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2b4rp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pvfh"]
+size = Vector3(40, 40, 1)
+
+[node name="Level1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_58hmr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_xmrl8")
+target = NodePath("../RigidBody3D")
+sensitivity = 0.3
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 1.025, 3)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." node_paths=PackedStringArray("cameraController")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("1_62msl")
+cameraController = NodePath("../CameraController")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_2b4rp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = ExtResource("3_ci4s5")
+surface_material_override/0 = ExtResource("4_youys")
+
+[node name="Floor2" type="StaticBody3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="Floor2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_t1bw8")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_vcrrr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_8pvfh")

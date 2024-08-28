@@ -9,7 +9,7 @@ namespace Game;
 public class Player : Script
 {
     [ShowInEditor, Serialize]
-    private Scene nextLevel;
+    private SceneReference nextLevel;
 
     [ShowInEditor, Serialize]
     private CoinManager coinManager;
@@ -69,8 +69,7 @@ public class Player : Script
             return true;
         });
 
-        //Level.LoadScene(nextLevel);
-        Debug.Log("Load Next Level");
+        Level.ChangeSceneAsync(nextLevel);
 
         return result;
     }
@@ -84,6 +83,8 @@ public class Player : Script
         playerHUD.GetScript<PlayerHUD>().UpdateScore(coins);
         if (coinManager.CollectedAllCoins(1))
         {
+            Screen.CursorVisible = true;
+            Screen.CursorLock = CursorLockMode.None;
             LoadNextLevel(3000);
         }
     }

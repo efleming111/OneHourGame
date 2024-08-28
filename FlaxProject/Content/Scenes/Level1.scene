@@ -146,6 +146,7 @@
 			"TypeName": "Game.Player",
 			"ParentID": "8fcd355847346e74386b648845c076e8",
 			"V": {
+	"nextLevel": "4d023ee44580020f0fc58bbb8ebceb08",
 	"coinManager": "2c5689954469dd2d0f468aa24adbca2a",
 	"playerHUD": "acf2e9234a6de706df43f1865401c392",
 	"rigidBody": "8fcd355847346e74386b648845c076e8",

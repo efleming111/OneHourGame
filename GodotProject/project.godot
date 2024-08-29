@@ -19,6 +19,10 @@ config/icon="res://Icons/icon.svg"
 
 project/assembly_name="GodotProject"
 
+[global_group]
+
+Player=""
+
 [input]
 
 ExitGame={

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfvw0olccfjgu"]
+
+[ext_resource type="Material" uid="uid://dlke13ym280yd" path="res://Materials/M_Floor.tres" id="1_6c2ua"]
+[ext_resource type="ArrayMesh" uid="uid://1kojlwjlcj1m" path="res://Meshes/Coin.res" id="2_efaua"]
+[ext_resource type="Script" path="res://Scripts/Coin.cs" id="3_lf5j3"]
+[ext_resource type="AudioStream" uid="uid://fby7hxguopil" path="res://SoundFX/CollectCoin.mp3" id="4_i6gqu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5lv82"]
+height = 0.125
+radius = 0.36
+
+[node name="Coin" type="MeshInstance3D" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.08349, -5.73164)
+material_override = ExtResource("1_6c2ua")
+mesh = ExtResource("2_efaua")
+script = ExtResource("3_lf5j3")
+player = NodePath("")
+turnSpeed = 2.0
+
+[node name="CollectSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i6gqu")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_5lv82")
+
+[connection signal="body_entered" from="Area3D" to="." method="OnTriggerEntered"]

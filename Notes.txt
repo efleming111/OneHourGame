@@ -1,32 +1,20 @@
-Engine Tests
-Create "One Hour Game" in 3 engines
+Unreal Engine 5 Notes
 
-Flax Project: 		Done
-Godot Project:		start    
-Unreal Engine Project:	start
-
-TODO:
-Flax Project
- Update player movement
-
-Godot Project
- Godot Progress 18m
-
-Unreal Engine Project
+TODO's
 
 
-Godot - Blender Export
-Transform->Apply Scalings	= FBX Units Scale
+Blender Settings
+ Scene->Uints->Length->Centimeters
 
-C# delay example
-public async Task<bool> DestroyActorInSeconds(int milliseconds)
-{
-    bool result = await Task.Run(() =>
-    {
-        Task.Delay(milliseconds).Wait();
-        return true;
-    });
-    DestroyActor();
+Unreal - Blender Export
+ Transform->Apply Scalings	= FBX Units Scale
+ Transform->Forward		= X Forward
+ Transform->Up			= Z Up
+ Transform->Apply Transform	= Checked
+ Geometry->Smoothing		= Face
 
-    return result;
-}
+Unreal - Blender Import
+ Miscellaneous->Force Front XAxis	= Checked
+ Material->Material Import Method	= Do Not Create Material
+ Material->Import Textures		= Unchecked
+

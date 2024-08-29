@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
 
@@ -16,6 +17,13 @@ public partial class Player : RigidBody3D
 
     private Vector3 forwardVector = Vector3.Zero;
     private Vector3 rightVector = Vector3.Zero;
+    private bool isJumping = false;
+
+    private int coins;
+    public int Coins
+    {
+        get { return coins; }
+    }
 
     public override void _Ready()
 	{
@@ -29,10 +37,10 @@ public partial class Player : RigidBody3D
             GetTree().Quit();
         }
 
-        // TODO prevent double jumping
-        if (Input.IsActionJustPressed("Jump"))
+        if (Input.IsActionJustPressed("Jump") && !isJumping)
         {
             ApplyImpulse(Vector3.Up * jumpForce);
+            isJumping = true;
         }
 
         forwardVector = Input.GetAxis("MoveForward", "MoveBackward") * (camera.GlobalPosition - GlobalPosition);
@@ -42,6 +50,27 @@ public partial class Player : RigidBody3D
 
         ApplyForce((float)delta * moveForce * forwardVector.Normalized());
         ApplyForce((float)delta * moveForce * rightVector.Normalized());
+    }
+
+    public void OnCollisionEntered(Node3D body)
+    {
+        isJumping = false;
+    }
+
+    public void CollectCoins(int amount)
+    {
+        if (amount < 0)
+        {
+            return;
+        }
+        coins += amount;
+        //playerHUD.GetScript<PlayerHUD>().UpdateScore(coins);
+        //if (coinManager.CollectedAllCoins(1))
+        //{
+        //    Screen.CursorVisible = true;
+        //    Screen.CursorLock = CursorLockMode.None;
+        //    LoadNextLevel(3000);
+        //}
     }
 }
 
@@ -58,30 +87,13 @@ public partial class Player : RigidBody3D
 //    [ShowInEditor, Serialize]
 //    private UICanvas playerHUD;
 
-//    [ShowInEditor, Serialize]
-//    private RigidBody rigidBody;
 
 
 
-//    private bool isJumping = false;
-
-//    private int coins;
-//    public int Coins
-//    {
-//        get { return coins; }
-//    }
-
-//    public override void OnStart()
-//    {
-//        rigidBody.CollisionEnter += OnCollisionEnter;
-//    }
-
-//    public override void OnUpdate()
-//    {
-//        base.OnUpdate();
 
 
-//    }
+
+
 
 //    private async Task<bool> LoadNextLevel(int millisecond)
 //    {
@@ -95,43 +107,4 @@ public partial class Player : RigidBody3D
 
 //        return result;
 //    }
-//    public void CollectCoins(int amount)
-//    {
-//        if (amount < 0)
-//        {
-//            return;
-//        }
-//        coins += amount;
-//        playerHUD.GetScript<PlayerHUD>().UpdateScore(coins);
-//        if (coinManager.CollectedAllCoins(1))
-//        {
-//            Screen.CursorVisible = true;
-//            Screen.CursorLock = CursorLockMode.None;
-//            LoadNextLevel(3000);
-//        }
-//    }
 
-//    public void SpendCoins(int amount)
-//    {
-//        if (!CanSpendCoins(amount))
-//        {
-//            return;
-//        }
-//        coins -= amount;
-//        playerHUD.GetScript<PlayerHUD>().UpdateScore(coins);
-//    }
-
-//    public bool CanSpendCoins(int amount)
-//    {
-//        if (coins - amount < 0)
-//        {
-//            return false;
-//        }
-//        return true;
-//    }
-
-//    public void OnCollisionEnter(Collision collision)
-//    {
-//        isJumping = false;
-//    }
-//}

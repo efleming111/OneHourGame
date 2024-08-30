@@ -1,6 +1,9 @@
 Unreal Engine 5 Notes
 
 TODO's
+Add bookmark - https://dev.epicgames.com/community/learning/tutorials/mX6b/unreal-engine-project-structure-naming-conventions
+Make ball roll in direction camera is pointing
+
 
 
 Blender Settings
